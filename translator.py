@@ -10,5 +10,5 @@ def get_translation(word, lang):
               'format': 'json'}
     try:
         return requests.get(dictionary_server, params=params).json()['def'][0]['tr'][0]['text']
-    except Exception:
-        return 'Failed to translate the text.'
+    except Exception as e:
+        return 'Извините, не удалось перевести текст.'
